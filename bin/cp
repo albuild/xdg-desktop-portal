@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+eval `cat env`
+mkdir -p rpm
+exec docker run --rm -v `pwd`/rpm:/rpm albuild-xdg-desktop-portal:$version /bin/bash -l -c "cp /root/rpmbuild/RPMS/x86_64/albuild-xdg-desktop-portal-$version-1.amzn2.x86_64.rpm /rpm"

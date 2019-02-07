@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+eval `cat env`
+target_version_minor=`echo $target_version | sed 's/^\([0-9]\+\.[0-9]\+\).\+/\1/'`
+network=$ALBUILD_NETWORK
+if [ "$network" = "" ]; then
+  network=default
+fi
+exec docker build . --network $network --force-rm --build-arg version=$version --build-arg target_version=$target_version --build-arg target_version_minor=$target_version_minor -t albuild-xdg-desktop-portal:$version

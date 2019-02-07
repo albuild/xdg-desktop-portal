@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+eval `cat env`
+network=$ALBUILD_NETWORK
+if [ "$network" = "" ]; then
+  network=default
+fi
+exec docker run --network $network -it --rm albuild-xdg-desktop-portal:$version /bin/bash -l
