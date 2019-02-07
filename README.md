@@ -14,8 +14,6 @@ Yet another unofficial xdg-desktop-portal package for Amazon Linux 2.
     sudo yum install -y albuild-xdg-desktop-portal-0.1.0-1.amzn2.x86_64.rpm
     ```
 
-1. Logout and login.
-
 ## Build (Amazon WorkSpaces)
 
 ### System Requirements
